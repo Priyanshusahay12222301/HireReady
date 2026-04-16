@@ -89,18 +89,6 @@
 </a>
 </div>
 </div>
-<div class="mt-auto p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
-<div class="flex items-center gap-3 mb-4">
-<img alt="User Avatar" class="w-10 h-10 rounded-full" data-alt="Small profile thumbnail of a professional male student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Owh2LisQZSlOYU8-0Tg8bqChn-N6mbMDmRx-7pcY5PumYUijGmge-h9pNmM3_wmm2jXzPo_8azi4JmH2WOoPDWe84JWDvp1lJRkN8SoQGc6JaDuV4OwJUTsSTLlhU47h6Z7NhVb_55-7Oby4fBPyiVbidPiUzrbjiauIw7NvLW68DZOBLsPBNrdiDDl6Rg37hVfHSJZfNV1LMdJIZhWzNSFd7GPq-irp3blowF7yuMn6q9Z3_yVdSqimjn1GisVYxo_suS4HTkA"/>
-<div>
-<p class="text-sm font-bold text-slate-900 dark:text-white" id="jobs-sidebar-user-name">Alex Johnson</p>
-<p class="text-xs text-slate-500" id="jobs-sidebar-user-meta">Senior Student</p>
-</div>
-</div>
-<button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-sm font-medium transition-all active:scale-95">
-                    Upload Resume
-                </button>
-</div>
 </aside>
 <!-- Main Content -->
 <main class="ml-64 flex-1 p-8">
@@ -262,38 +250,12 @@
         return String(value || "").trim().toLowerCase();
     }
 
+    function hydrateSidebarUser() {
+        // Sidebar user card removed from Jobs page.
+    }
+
     function setStatusMessage(message, isError) {
         const el = document.getElementById("jobs-status-message");
-
-        function hydrateSidebarUser() {
-            const nameEl = document.getElementById("jobs-sidebar-user-name");
-            const metaEl = document.getElementById("jobs-sidebar-user-meta");
-            if (!nameEl || !metaEl) {
-                return;
-            }
-
-            try {
-                const raw = localStorage.getItem("hireready_user");
-                if (!raw) {
-                    return;
-                }
-
-                const user = JSON.parse(raw);
-                if (user && user.name) {
-                    nameEl.textContent = user.name;
-                }
-
-                if (user && user.roll_no && user.email) {
-                    metaEl.textContent = `${user.roll_no} • ${user.email}`;
-                } else if (user && user.email) {
-                    metaEl.textContent = user.email;
-                } else if (user && user.roll_no) {
-                    metaEl.textContent = user.roll_no;
-                }
-            } catch (error) {
-                // Keep fallback placeholder text if local storage is unavailable.
-            }
-        }
         if (!el) {
             return;
         }
