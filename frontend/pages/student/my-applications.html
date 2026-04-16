@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Applications | HireReady</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#004ac6",
+            surface: "#f9f9ff",
+            onsurface: "#141b2b",
+            muted: "#5f6475",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: "Inter", sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  </style>
+</head>
+<body class="bg-surface text-onsurface">
+  <header class="bg-white border-b border-slate-200 flex justify-between items-center px-8 py-4 w-full sticky top-0 z-50">
+    <div class="flex items-center gap-4">
+      <span class="font-bold text-2xl tracking-tight text-onsurface">HireReady</span>
+    </div>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a class="text-muted hover:text-primary" href="dashboard.html">Dashboard</a>
+      <a class="text-primary border-b-2 border-primary font-semibold" href="my-applications.html">Applications</a>
+      <a class="text-muted hover:text-primary" href="jobs.html">Resources</a>
+      <a class="text-muted hover:text-primary" href="profile.html">Profile</a>
+    </div>
+  </header>
+
+  <div class="flex min-h-screen">
+    <aside class="hidden md:flex fixed left-0 top-[73px] h-[calc(100vh-73px)] w-64 flex-col p-4 bg-slate-100 border-r border-slate-200">
+      <div class="px-4 mb-8">
+        <h2 class="text-xl font-black text-onsurface">HireReady</h2>
+        <p class="text-xs font-medium text-muted">Placement Hub</p>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white rounded-lg text-sm font-medium" href="dashboard.html">
+          <span class="material-symbols-outlined">dashboard</span> Dashboard
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 bg-white text-primary rounded-lg shadow-sm font-bold text-sm" href="my-applications.html">
+          <span class="material-symbols-outlined">work_history</span> Applications
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white rounded-lg text-sm font-medium" href="jobs.html">
+          <span class="material-symbols-outlined">work</span> Job Board
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white rounded-lg text-sm font-medium" href="interviews.html">
+          <span class="material-symbols-outlined">event_available</span> Interviews
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white rounded-lg text-sm font-medium" href="questions.html">
+          <span class="material-symbols-outlined">school</span> Learning
+        </a>
+        <a class="flex items-center gap-3 px-4 py-3 text-muted hover:bg-white rounded-lg text-sm font-medium" href="profile.html">
+          <span class="material-symbols-outlined">person_pin</span> Profile
+        </a>
+      </nav>
+      <a class="mt-auto flex items-center gap-3 px-4 py-3 text-muted hover:bg-white rounded-lg text-sm font-medium" href="../login.html">
+        <span class="material-symbols-outlined">logout</span> Sign Out
+      </a>
+    </aside>
+
+    <main class="flex-1 md:ml-64 p-8 md:p-12 pb-24">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-2">My Applications</h1>
+        <p class="text-muted text-lg max-w-2xl mb-10">Manage and track your professional journey across global technology leaders.</p>
+
+        <section class="mb-8 overflow-x-auto">
+          <div class="flex items-center gap-2 p-1.5 bg-slate-100 rounded-xl inline-flex min-w-max" id="application-filter-tabs">
+            <button class="bg-white text-primary px-6 py-2.5 rounded-lg text-sm font-bold shadow-sm flex items-center gap-2" data-filter-status="all" type="button">
+              All <span class="bg-blue-50 px-2 py-0.5 rounded-full text-[10px]" id="count-all">0</span>
+            </button>
+            <button class="text-muted hover:bg-slate-200 px-6 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all" data-filter-status="applied" type="button">
+              Applied <span class="bg-slate-200 px-2 py-0.5 rounded-full text-[10px]" id="count-applied">0</span>
+            </button>
+            <button class="text-muted hover:bg-slate-200 px-6 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all" data-filter-status="shortlisted" type="button">
+              Shortlisted <span class="bg-slate-200 px-2 py-0.5 rounded-full text-[10px]" id="count-shortlisted">0</span>
+            </button>
+            <button class="text-muted hover:bg-slate-200 px-6 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all" data-filter-status="selected" type="button">
+              Selected <span class="bg-slate-200 px-2 py-0.5 rounded-full text-[10px]" id="count-selected">0</span>
+            </button>
+            <button class="text-muted hover:bg-slate-200 px-6 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all" data-filter-status="rejected" type="button">
+              Rejected <span class="bg-slate-200 px-2 py-0.5 rounded-full text-[10px]" id="count-rejected">0</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="application-cards-grid"></section>
+
+        <section class="hidden flex-col items-center justify-center py-24 text-center" id="applications-empty-state">
+          <h3 class="text-2xl font-bold text-onsurface mb-3">No Applications Yet</h3>
+          <p class="text-muted max-w-md mb-6">Start your journey today. Explore opportunities matching your skills and interests.</p>
+          <a class="bg-primary text-white font-bold py-3 px-8 rounded-xl inline-flex items-center gap-2" href="jobs.html">
+            Browse Job Board <span class="material-symbols-outlined">explore</span>
+          </a>
+        </section>
+
+        <p class="mt-6 text-sm text-muted" id="applications-status-message"></p>
+      </div>
+    </main>
+  </div>
+
+  <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-white/90 backdrop-blur-xl border-t border-slate-200">
+    <a class="flex flex-col items-center justify-center text-slate-400" href="dashboard.html">
+      <span class="material-symbols-outlined">home</span>
+      <span class="text-[10px] font-medium">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-slate-100 text-primary rounded-xl px-4 py-1" href="my-applications.html">
+      <span class="material-symbols-outlined">assignment</span>
+      <span class="text-[10px] font-medium">Apps</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400" href="jobs.html">
+      <span class="material-symbols-outlined">work</span>
+      <span class="text-[10px] font-medium">Jobs</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400" href="profile.html">
+      <span class="material-symbols-outlined">account_circle</span>
+      <span class="text-[10px] font-medium">Profile</span>
+    </a>
+  </nav>
+
+  <script src="../../js/api.js"></script>
+  <script>
+    const STATUS_LABELS = ["Applied", "Shortlisted", "Selected", "Rejected"];
+    let allApplications = [];
+    let activeFilter = "all";
+
+    function normalizeStatus(value) {
+      return String(value || "").trim().toLowerCase();
+    }
+
+    function formatDate(value) {
+      if (!value) return "Date unavailable";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "Date unavailable";
+      return date.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+    }
+
+    function statusPillClasses(status) {
+      const normalized = normalizeStatus(status);
+      if (normalized === "selected") return "bg-green-100 text-green-700";
+      if (normalized === "shortlisted") return "bg-blue-100 text-blue-700";
+      if (normalized === "rejected") return "bg-red-100 text-red-700";
+      return "bg-slate-100 text-slate-700";
+    }
+
+    function cardMarkup(application) {
+      const company = application.job?.company || "Unknown Company";
+      const role = application.job?.role || "Role unavailable";
+      const location = application.job?.location || "Location unavailable";
+      const appliedOn = formatDate(application.applied_on);
+      const status = STATUS_LABELS.find((label) => normalizeStatus(label) === normalizeStatus(application.status)) || "Applied";
+
+      return `
+        <article class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col h-full">
+          <div class="flex justify-between items-start mb-6">
+            <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary">business</span>
+            </div>
+            <span class="${statusPillClasses(status)} px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">${status}</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-onsurface mb-1">${company}</h3>
+            <p class="text-muted font-medium mb-5">${role}</p>
+            <div class="space-y-3 mb-8">
+              <div class="flex items-center gap-2 text-sm text-muted">
+                <span class="material-symbols-outlined text-lg">calendar_today</span>
+                <span>Applied ${appliedOn}</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-muted">
+                <span class="material-symbols-outlined text-lg">location_on</span>
+                <span>${location}</span>
+              </div>
+            </div>
+          </div>
+          <a class="text-primary font-bold text-sm inline-flex items-center gap-1" href="jobs.html">
+            View Details <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+          </a>
+        </article>
+      `;
+    }
+
+    function setStatusMessage(message, isError) {
+      const el = document.getElementById("applications-status-message");
+      if (!el) return;
+      el.textContent = message || "";
+      el.className = `mt-6 text-sm ${isError ? "text-red-600" : "text-muted"}`;
+    }
+
+    function updateCounts() {
+      const byStatus = { applied: 0, shortlisted: 0, selected: 0, rejected: 0 };
+      allApplications.forEach((application) => {
+        const status = normalizeStatus(application.status);
+        if (Object.prototype.hasOwnProperty.call(byStatus, status)) byStatus[status] += 1;
+      });
+
+      document.getElementById("count-all").textContent = String(allApplications.length);
+      document.getElementById("count-applied").textContent = String(byStatus.applied);
+      document.getElementById("count-shortlisted").textContent = String(byStatus.shortlisted);
+      document.getElementById("count-selected").textContent = String(byStatus.selected);
+      document.getElementById("count-rejected").textContent = String(byStatus.rejected);
+    }
+
+    function updateTabStyles() {
+      document.querySelectorAll("[data-filter-status]").forEach((button) => {
+        const isActive = button.getAttribute("data-filter-status") === activeFilter;
+        if (isActive) {
+          button.classList.add("bg-white", "text-primary", "shadow-sm", "font-bold");
+          button.classList.remove("text-muted", "hover:bg-slate-200", "font-semibold");
+        } else {
+          button.classList.remove("bg-white", "text-primary", "shadow-sm", "font-bold");
+          button.classList.add("text-muted", "hover:bg-slate-200", "font-semibold");
+        }
+      });
+    }
+
+    function renderApplications() {
+      const grid = document.getElementById("application-cards-grid");
+      const emptyState = document.getElementById("applications-empty-state");
+      const filtered = activeFilter === "all"
+        ? allApplications
+        : allApplications.filter((application) => normalizeStatus(application.status) === activeFilter);
+
+      grid.innerHTML = "";
+
+      if (!filtered.length) {
+        emptyState.classList.remove("hidden");
+        emptyState.classList.add("flex");
+        const label = activeFilter === "all" ? "No applications found yet." : `No ${activeFilter} applications found.`;
+        setStatusMessage(label, false);
+        return;
+      }
+
+      emptyState.classList.add("hidden");
+      emptyState.classList.remove("flex");
+      filtered.forEach((application) => {
+        grid.insertAdjacentHTML("beforeend", cardMarkup(application));
+      });
+
+      const label = activeFilter === "all" ? `${filtered.length} application(s)` : `${filtered.length} ${activeFilter} application(s)`;
+      setStatusMessage(`Showing ${label}.`, false);
+    }
+
+    async function loadApplications() {
+      const user = JSON.parse(localStorage.getItem("hireready_user") || "null");
+      try {
+        let scopedApplications = [];
+        let fallbackApplications = [];
+
+        if (user && user.id) {
+          scopedApplications = await window.HireReadyAPI.listApplications(user.id);
+        }
+
+        if (!scopedApplications.length) {
+          fallbackApplications = await window.HireReadyAPI.listApplications();
+        }
+
+        allApplications = scopedApplications.length ? scopedApplications : fallbackApplications;
+        updateCounts();
+        updateTabStyles();
+        renderApplications();
+      } catch (error) {
+        setStatusMessage(error.message || "Failed to load applications.", true);
+      }
+    }
+
+    document.querySelectorAll("[data-filter-status]").forEach((button) => {
+      button.addEventListener("click", () => {
+        activeFilter = button.getAttribute("data-filter-status") || "all";
+        updateTabStyles();
+        renderApplications();
+      });
+    });
+
+    loadApplications();
+  </script>
+</body>
+</html>

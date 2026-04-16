@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Applications | PrepPortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#996100",
+                        "on-tertiary-container": "#ffeedd",
+                        "surface-container-highest": "#dce2f7",
+                        "outline": "#737686",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-surface-variant": "#434655",
+                        "background": "#f9f9ff",
+                        "surface-container-high": "#e1e8fd",
+                        "surface": "#f9f9ff",
+                        "on-surface": "#141b2b",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary": "#784b00",
+                        "secondary-container": "#6cf8bb",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-secondary-container": "#00714d",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-tint": "#0053db",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "secondary": "#006c49",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-container": "#eeefff",
+                        "primary-container": "#2563eb",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-variant": "#dce2f7",
+                        "primary": "#004ac6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d3daef",
+                        "on-background": "#141b2b",
+                        "inverse-surface": "#293040",
+                        "on-secondary-fixed": "#002113",
+                        "outline-variant": "#c3c6d7",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00174b",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e9edff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-gradient {
+            background: linear-gradient(135deg, #004ac6 0%, #2563eb 100%);
+        }
+        .ambient-shadow {
+            shadow: 0 12px 32px rgba(20, 27, 43, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-[#f9f9ff] dark:bg-[#141b2b] text-[#141b2b] flex justify-between items-center px-8 py-4 w-full sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="font-['Inter'] font-bold text-2xl tracking-tight text-[#141b2b] dark:text-[#f9f9ff]">PrepPortal</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-6 text-sm font-medium">
+<a class="text-[#141b2b]/60 dark:text-[#f9f9ff]/60 hover:text-[#2563EB] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-[#2563EB] font-semibold border-b-2 border-[#2563EB] transition-colors duration-200" href="#">Applications</a>
+<a class="text-[#141b2b]/60 dark:text-[#f9f9ff]/60 hover:text-[#2563EB] transition-colors duration-200" href="#">Learning</a>
+<a class="text-[#141b2b]/60 dark:text-[#f9f9ff]/60 hover:text-[#2563EB] transition-colors duration-200" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#141b2b]/60 dark:text-[#f9f9ff]/60 hover:text-[#2563EB]">notifications</button>
+<button class="material-symbols-outlined text-[#141b2b]/60 dark:text-[#f9f9ff]/60 hover:text-[#2563EB]">settings</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="User profile" data-alt="professional headshot of a smiling young man in a blue shirt with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALnNLyDEQ70K7Ryu0N0jDXm3nXGqSb1O9duJmBWPxu9uK3Gcpq4ZG5hYDAbEafzhCIqT_wsGqAnkXbaKgGH8hYZWAQ8UpQgGYRND36NUWUgUxqrzoPc0dVlTN3wb5dx1c1W6NdSLmJMlQx3G84enzEUnLiuuoeLTQGWqh_TWZbeUYOS5QnmXIR0iagCRotn6NSCpq-hHIS-WKBFf3-7l2cHcVfXwLKi6pz5_K3hyiuJ6DET8aESHpvYMdRWh8Uz96dwRiEp2BXFno"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-[#f1f3ff] dark:bg-[#1c2436] h-screen w-64 fixed left-0 top-0 hidden md:flex flex-col p-4 space-y-2 pt-24">
+<div class="px-4 mb-8">
+<h2 class="text-xl font-black text-[#141b2b] dark:text-[#f9f9ff]">The Architect</h2>
+<p class="text-xs font-medium text-[#141b2b]/50">Placement Hub</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 dark:hover:bg-white/10 transition-all rounded-lg font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-[#2563EB] text-[#2563EB] dark:text-white rounded-lg shadow-sm font-bold font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined">work_history</span> Applications
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 dark:hover:bg-white/10 transition-all rounded-lg font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">school</span> Learning
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 dark:hover:bg-white/10 transition-all rounded-lg font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">person_pin</span> Profile
+                </a>
+</nav>
+<div class="mt-auto pt-6 space-y-1">
+<button class="w-full premium-gradient text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 mb-6 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">add</span> New Application
+                </button>
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 dark:hover:bg-white/10 transition-all rounded-lg font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">help</span> Help
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 dark:hover:bg-white/10 transition-all rounded-lg font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">logout</span> Sign Out
+                </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 md:ml-64 p-8 md:p-12 pb-24">
+<!-- Header Section -->
+<div class="max-w-6xl mx-auto mb-12">
+<h1 class="text-[32px] md:text-[56px] font-bold text-on-surface leading-tight mb-2">My Applications</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl">Manage and track your professional journey across global technology leaders. Your next big move is just a step away.</p>
+</div>
+<!-- Filter Tabs -->
+<div class="max-w-6xl mx-auto mb-12 overflow-x-auto">
+<div class="flex items-center gap-2 p-1.5 bg-surface-container-low rounded-xl inline-flex min-w-max">
+<button class="bg-surface-container-lowest text-primary px-6 py-2.5 rounded-lg text-sm font-bold shadow-sm flex items-center gap-2">
+                        All <span class="bg-primary/10 px-2 py-0.5 rounded-full text-[10px]">12</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high px-6 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all">
+                        Applied <span class="bg-on-surface-variant/10 px-2 py-0.5 rounded-full text-[10px]">5</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high px-6 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all">
+                        Shortlisted <span class="bg-on-surface-variant/10 px-2 py-0.5 rounded-full text-[10px]">3</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high px-6 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all">
+                        Selected <span class="bg-on-surface-variant/10 px-2 py-0.5 rounded-full text-[10px]">1</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high px-6 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all">
+                        Rejected <span class="bg-on-surface-variant/10 px-2 py-0.5 rounded-full text-[10px]">3</span>
+</button>
+</div>
+</div>
+<!-- Application Cards Grid -->
+<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Card 1: TCS (High Impact Bento Style) -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(20,27,43,0.06)] flex flex-col md:flex-row gap-10">
+<div class="flex-1">
+<div class="flex justify-between items-start mb-6">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">corporate_fare</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">TCS</h3>
+<p class="text-on-surface-variant font-medium">Software Dev</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Shortlisted</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Applied Apr 10, 2024</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">location_on</span>
+<span>Remote / Mumbai, India</span>
+</div>
+</div>
+<a class="text-primary font-bold text-sm flex items-center gap-1 group" href="#">
+                            View Details 
+                            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+<!-- Vertical Progress Timeline -->
+<div class="w-full md:w-48 bg-surface-container-low/50 p-6 rounded-xl">
+<h4 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-6">Pipeline</h4>
+<div class="space-y-0">
+<!-- Step 1 -->
+<div class="flex gap-4 pb-6 relative">
+<div class="absolute left-[11px] top-6 bottom-0 w-0.5 bg-primary/20"></div>
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white text-xs">check</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Applied</p>
+<p class="text-[10px] text-on-surface-variant">Apr 10</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-4 pb-6 relative">
+<div class="absolute left-[11px] top-6 bottom-0 w-0.5 bg-primary/20"></div>
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-white text-xs">check</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Reviewed</p>
+<p class="text-[10px] text-on-surface-variant">Apr 15</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-4">
+<div class="w-6 h-6 rounded-full border-2 border-primary bg-white flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div>
+<p class="text-xs font-bold text-primary">Shortlisted</p>
+<p class="text-[10px] text-on-surface-variant">Yesterday</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Google -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(20,27,43,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-8">
+<div class="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">brand_family</span>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Pending</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold text-on-surface mb-1">Google</h3>
+<p class="text-on-surface-variant font-medium mb-6">Product Designer</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Applied Oct 22, 2023</span>
+</div>
+</div>
+</div>
+<a class="text-primary font-bold text-sm flex items-center gap-1 group" href="#">
+                        View Details 
+                        <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+<!-- Card 3: Amazon -->
+<div class="lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_rgba(20,27,43,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-8">
+<div class="w-14 h-14 bg-surface-container-low rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">shopping_cart</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Applied</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-bold text-on-surface mb-1">Amazon</h3>
+<p class="text-on-surface-variant font-medium mb-6">Backend Dev</p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>In Review</span>
+</div>
+</div>
+</div>
+<a class="text-primary font-bold text-sm flex items-center gap-1 group" href="#">
+                        View Details 
+                        <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+<!-- Empty State (Hidden) - To be shown if list is empty -->
+<div class="hidden lg:col-span-12 flex flex-col items-center justify-center py-24 text-center">
+<div class="w-64 h-64 mb-8 relative">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl"></div>
+<img alt="No applications" class="rounded-2xl shadow-xl border-4 border-white/50 grayscale opacity-80" data-alt="modern minimalist office with laptop, notebook and coffee cup in soft bright daylight for professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB_yaSTkRksgLCw3lBX1fsgt0Ud4xSiQrhGFW2uuaT4lrOk5ml3tOmPf5JSVAiR0TE2ZflkaarRnDPm8-L0YtTkzjZ8qLD-P7TgMfylQEiCuV5f6AwYfarnb5NuWRYlWk2gAM_y3XG00iQthTrjNQBvJPofxq2ew-OJpsO5ztWYvzMN2ma1bNdKjxSac3lHTUoFmufZFOAyelMPrsnmjiZC4__cL3IR3IvfCnF0TG_p6auGWMRPpclNycSaAXIhr69lGGMpx7bl9k"/>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-4">No Applications Yet</h3>
+<p class="text-on-surface-variant max-w-sm mb-8">Start your journey today. Explore thousands of opportunities matching your skills and interests.</p>
+<button class="premium-gradient text-white font-bold py-3 px-8 rounded-xl flex items-center gap-2">
+                        Browse Job Board <span class="material-symbols-outlined">explore</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-white/80 dark:bg-[#141b2b]/80 backdrop-blur-xl border-t border-[#c3c6d7]/15 shadow-[0_-12px_32px_rgba(20,27,43,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#141b2b]/40 dark:text-[#f9f9ff]/40" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#f1f3ff] dark:bg-[#2563EB]/20 text-[#2563EB] rounded-xl px-4 py-1" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-['Inter'] text-[10px] font-medium">Apps</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#141b2b]/40 dark:text-[#f9f9ff]/40" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-['Inter'] text-[10px] font-medium">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#141b2b]/40 dark:text-[#f9f9ff]/40" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

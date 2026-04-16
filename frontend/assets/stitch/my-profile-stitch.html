@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile | PrepPortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#996100",
+                        "on-tertiary-container": "#ffeedd",
+                        "surface-container-highest": "#dce2f7",
+                        "outline": "#737686",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-surface-variant": "#434655",
+                        "background": "#f9f9ff",
+                        "surface-container-high": "#e1e8fd",
+                        "surface": "#f9f9ff",
+                        "on-surface": "#141b2b",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary": "#784b00",
+                        "secondary-container": "#6cf8bb",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-secondary-container": "#00714d",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-tint": "#0053db",
+                        "surface-bright": "#f9f9ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "secondary": "#006c49",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-container": "#eeefff",
+                        "primary-container": "#2563eb",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-variant": "#dce2f7",
+                        "primary": "#004ac6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d3daef",
+                        "on-background": "#141b2b",
+                        "inverse-surface": "#293040",
+                        "on-secondary-fixed": "#002113",
+                        "outline-variant": "#c3c6d7",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00174b",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e9edff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="hidden md:flex flex-col p-4 space-y-2 bg-[#f1f3ff] dark:bg-[#1c2436] h-screen w-64 fixed left-0 top-0 z-40">
+<div class="px-4 py-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<div>
+<h1 class="text-xl font-black text-[#141b2b] dark:text-[#f9f9ff]">PrepPortal</h1>
+<p class="text-[10px] uppercase tracking-widest font-bold text-primary/60">Placement Hub</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">work_history</span>
+<span>Applications</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">school</span>
+<span>Learning</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-[#2563EB] text-[#2563EB] dark:text-white rounded-lg shadow-sm font-bold font-['Inter'] text-sm" href="#">
+<span class="material-symbols-outlined">person_pin</span>
+<span>Profile</span>
+</a>
+</nav>
+<div class="pt-4 mt-4 border-t border-outline-variant/15 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#141b2b]/70 dark:text-[#f9f9ff]/70 hover:bg-white/50 transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen pb-24 md:pb-12">
+<!-- TopNavBar (Shared Component) -->
+<header class="flex justify-between items-center px-8 py-4 w-full sticky top-0 z-30 bg-[#f9f9ff] dark:bg-[#141b2b] transition-all">
+<div class="flex items-center md:hidden">
+<h2 class="font-['Inter'] font-bold text-2xl tracking-tight text-[#141b2b]">PrepPortal</h2>
+</div>
+<div class="hidden md:block">
+<h2 class="font-['Inter'] font-bold text-2xl tracking-tight text-on-surface">My Profile</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 w-64" placeholder="Search..." type="text"/>
+</div>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="User profile" data-alt="Close up portrait of a young professional man with a friendly smile, clean indoor office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-TfkT2qX7mFHPrL42l_OpbmtRDd9E7R1sayUEl5H_syyh9drK1PMIX1g9S6lQ_FwTqkelCD8NiwYhkbRwBdLCwb-hMiSZ4_9Axq3OeLY5izZkuJ8m3MOxA-zKPh4RSnu_2d8mFYj5oJOKcIz-YBVIctsiTgOAeSgbdMvAPaVcWZszPrXeEOzyntHrc_oU8-o28j4fr-7DOpGeDEpF-DlUXUcZtrxnm_2HZNGungK3LureWUBYWzdIaAdQ7-GQ_tcg7wT1LyKG7NU"/>
+</div>
+</div>
+</header>
+<div class="px-8 py-8 max-w-5xl mx-auto space-y-12">
+<!-- Profile Header -->
+<section class="relative group">
+<div class="h-48 w-full rounded-2xl bg-gradient-to-r from-primary to-primary-container overflow-hidden relative">
+<div class="absolute inset-0 opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCM_7d9ecDasu5KkB21LUtLLLuXjpDU_NluC38XylwR5LfKumWxu3iy_9-cvW0vrcCZt-sZQP9hyuRTwKJ9rHW9AxS_lqzXfsLLrZt2u7jMOEUGoc-Aq81VzPqs22y1LIpVpHrGEKn_VEWXs0GlOYMZ81LcT83VT7z5S-u8wLFqcKz-kohiPP1BxZq5vtrA0v_I_YXY_0N8a9cwIp1lHteNZ0sRMcmzWfBWmR19Wdj10C55MQOyQq9XmPiOf2VBgF7DtCkyFiT42hY');"></div>
+</div>
+<div class="flex flex-col md:flex-row items-end gap-6 px-8 -mt-12 relative z-10">
+<div class="relative">
+<div class="w-32 h-32 rounded-full border-4 border-surface bg-surface overflow-hidden shadow-xl">
+<img alt="Profile photo" data-alt="Portrait of a young male college student wearing a white shirt, soft natural light, smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg8JHgnLVs6FYkM-3thocXIiQAnjGq4phjcZxyObroBzRWmbb_LyN4HMG3DHtCpQZU2zDru195Z2HSFhApdzrRStgUrbPrj59KbwKxOAXLRw2DWTW7VY75eD5KmEwVwudC9Mp7JbYtKDYZSrm-PxEaCD8GDm83O2bL5rI5r0WZ5-qB2k4_tiwapVIAZ4tI1A9YWEWHRPw-cUYvR6R7kkROA1071qFRFJWlzJ-CmjEt90BodGjE82WbkaXDR53lie6n0VSL5EJ-YE4"/>
+</div>
+<button class="absolute bottom-1 right-1 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</button>
+</div>
+<div class="flex-1 pb-2">
+<h3 class="text-3xl font-bold text-on-surface">Arjun Vardhan</h3>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-1">
+<span class="flex items-center gap-1.5 text-on-surface-variant font-medium text-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">badge</span>
+                                RN: 2021CS1024
+                            </span>
+<span class="flex items-center gap-1.5 text-on-surface-variant font-medium text-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">mail</span>
+                                arjun.v@university.edu
+                            </span>
+</div>
+</div>
+<div class="pb-2">
+<button class="px-6 py-2.5 bg-surface-container-high text-on-surface font-semibold rounded-lg hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                            Edit Profile
+                        </button>
+</div>
+</div>
+</section>
+<!-- Asymmetric Bento Grid for Info Sections -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Personal Info (Span 2) -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl p-8">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<h4 class="text-xl font-bold tracking-tight">Personal Info</h4>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20" type="text" value="Arjun Vardhan"/>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Email Address</label>
+<input class="w-full bg-surface-dim/30 border-none rounded-lg p-3 text-on-surface/50 cursor-not-allowed" disabled="" type="email" value="arjun.v@university.edu"/>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Phone</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20" type="tel" value="+91 98765 43210"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">DOB</label>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20" type="date" value="2002-05-14"/>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Gender</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20">
+<option selected="">Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Academic Info -->
+<div class="bg-surface-container-low rounded-xl p-8 border-l-4 border-primary">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+<h4 class="text-xl font-bold tracking-tight">Academic Info</h4>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Current CGPA</label>
+<div class="flex items-center gap-4 bg-surface-container-lowest rounded-lg p-4">
+<span class="text-3xl font-black text-primary">8.92</span>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<span class="text-xs text-on-surface-variant font-medium">Top 5% of<br/>Department</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Branch</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20">
+<option selected="">Computer Science &amp; Engineering</option>
+<option>Information Technology</option>
+<option>Electronics &amp; Communication</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Current Year</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg p-3 text-on-surface focus:ring-2 focus:ring-primary/20">
+<option>1st Year</option>
+<option>2nd Year</option>
+<option selected="">3rd Year</option>
+<option>4th Year</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Skills Section -->
+<div class="bg-surface-container-low rounded-xl p-8 lg:col-span-2">
+<div class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<h4 class="text-xl font-bold tracking-tight">Skills</h4>
+</div>
+<span class="text-xs font-medium text-primary">Last updated: 2 days ago</span>
+</div>
+<div class="flex flex-wrap gap-3 mb-8">
+<div class="group flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full font-medium transition-transform hover:scale-105">
+<span>Python</span>
+<button class="hover:bg-white/20 rounded-full p-0.5 flex items-center">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="group flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full font-medium transition-transform hover:scale-105">
+<span>Java</span>
+<button class="hover:bg-white/20 rounded-full p-0.5 flex items-center">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="group flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full font-medium transition-transform hover:scale-105">
+<span>SQL</span>
+<button class="hover:bg-white/20 rounded-full p-0.5 flex items-center">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="group flex items-center gap-2 px-4 py-2 bg-surface-container-high text-on-surface-variant rounded-full font-medium italic">
+<span>React Native</span>
+<button class="hover:bg-black/10 rounded-full p-0.5 flex items-center">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<div class="relative max-w-md">
+<input class="w-full bg-surface-container-lowest border-2 border-dashed border-outline-variant/50 rounded-lg p-3 pr-12 text-sm focus:ring-0 focus:border-primary" placeholder="Add a new skill (e.g. AWS, C++, Figma)" type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-primary text-white rounded-md flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+</div>
+<!-- Resume Section -->
+<div class="bg-surface-container-low rounded-xl p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 -mr-16 -mt-16 rounded-full"></div>
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<h4 class="text-xl font-bold tracking-tight">Resume</h4>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/10 shadow-sm space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-red-600 shrink-0">
+<span class="material-symbols-outlined text-[32px]">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-on-surface truncate">Arjun_Vardhan_CV_2024.pdf</p>
+<p class="text-xs text-on-surface-variant">Modified Feb 12, 2024 • 2.4 MB</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<button class="flex items-center justify-center gap-2 py-2 px-3 bg-primary text-white text-xs font-bold rounded-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                Download
+                            </button>
+<button class="flex items-center justify-center gap-2 py-2 px-3 bg-surface-container-high text-on-surface text-xs font-bold rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+                                Upload New
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-end gap-4 pt-8 mt-12 border-t border-outline-variant/15">
+<button class="w-full sm:w-auto px-8 py-3 text-on-surface-variant font-bold hover:text-on-surface transition-colors">
+                    Cancel Changes
+                </button>
+<button class="w-full sm:w-auto px-12 py-3 bg-gradient-to-br from-primary to-primary-container text-white font-black rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                    Save Changes
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Shared Component) - Mobile Only -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-white/80 dark:bg-[#141b2b]/80 backdrop-blur-xl border-t border-[#c3c6d7]/15 shadow-[0_-12px_32px_rgba(20,27,43,0.06)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-[#141b2b]/40 dark:text-[#f9f9ff]/40 scale-90 active:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#141b2b]/40 dark:text-[#f9f9ff]/40 scale-90 active:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-['Inter'] text-[10px] font-medium">Apps</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#141b2b]/40 dark:text-[#f9f9ff]/40 scale-90 active:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-['Inter'] text-[10px] font-medium">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#f1f3ff] dark:bg-[#2563EB]/20 text-[#2563EB] rounded-xl px-4 py-1 scale-90 active:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>

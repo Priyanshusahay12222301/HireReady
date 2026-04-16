@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TCS Mock Test - HireReady</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {},
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-pattern {
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpt-7vZ5udUCqdNE7E1OkaeKhd7Vp_9Xcr8WywwU4ZWOnUCgISnQPf6VSXnlVKdxdpJUdUcl-8CehB-Rsnepz8lVxD659lOA0_hW2ynkoQLXwu7KZ0m6uCQ8mem3Gu8xShjiAwBq5cUTA9FFw6Hib7L0V8Mh9aXDshbRbo3Bb1EbcSTJuINQLYSbH0KSJtgIPxoD9V6A0GaPqge7RH5bfKMQgbYUYhlPnskWN1xkl5jhxIIphi09yxAVA0vcrefXDKQ0FAyTxINNc');
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased min-h-screen">
+<!-- TopNavBar: Execution of JSON style keys -->
+<header class="flex justify-between items-center h-16 px-6 w-full sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none font-sans antialiased">
+<div class="flex items-center gap-4">
+<a class="text-xl font-bold tracking-tight text-blue-600 dark:text-blue-400" href="dashboard.html">HireReady</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 font-medium py-5" href="mock-test-instructions.html">Mock Tests</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium py-5 px-2" href="dashboard.html">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium py-5 px-2" href="profile.html">Analytics</a>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer p-2 hover:bg-slate-100 rounded-full" data-icon="help">help</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer p-2 hover:bg-slate-100 rounded-full" data-icon="settings">settings</span>
+<img alt="Candidate profile avatar" class="w-8 h-8 rounded-full object-cover border border-slate-200" data-alt="close-up portrait of a young professional smiling against a neutral grey background, high quality business headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDopHbiGaSgmKq1v7yOGOBenTNlQHP8qvvxcYhDKi7l-QCN-Gpj17QpqGbJPtLg3mcXk9sFHenL5kjStVUzdu2pR6Nls9cp34gphs2oKV9gSiKPtqr_9_OZkT1OMogRy8tL8rMP0Gf2fufctB6x-wPFIYRjPPtHze-vkECIzorG8dhlhouB-96thyBjOJx3ZPjA-u1xXIv-T5aGEQQjtRuFLJkOCMUp6v7PVMyGRi1mqWk8jQd9Xf5rQkzo8pb7yAoAW5U38b5sWJE"/>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-12 flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+<!-- Pre-test Detail Card (Bento Grid Inspired Layout) -->
+<div class="w-full bg-white dark:bg-slate-900 rounded-xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Hero Header for the Test -->
+<div class="relative h-48 bg-blue-600 flex items-end p-8">
+<div class="absolute inset-0 opacity-20 hero-pattern" data-alt="abstract geometric pattern with blue and white interlocking lines creating a technical high-tech atmosphere"></div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold uppercase tracking-wider mb-3">
+<span class="material-symbols-outlined filled text-sm" data-icon="verified">verified</span>
+                        Company Prep
+                    </div>
+<h1 class="text-4xl font-extrabold text-white">TCS Mock Test</h1>
+<p class="text-blue-100 font-medium">Placement Prep Series • Pack 04</p>
+</div>
+</div>
+<div class="p-8">
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+<div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 mb-2 scale-125" data-icon="quiz">quiz</span>
+<span class="text-2xl font-bold">20 MCQs</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm">Multiple Choice</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 mb-2 scale-125" data-icon="timer">timer</span>
+<span class="text-2xl font-bold">20 Minutes</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm">Timed Session</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 mb-2 scale-125" data-icon="check_circle">check_circle</span>
+<span class="text-2xl font-bold">No Penalty</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm">No Negative Marking</span>
+</div>
+</div>
+<!-- Instructions Section -->
+<div class="mb-10">
+<h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400" data-icon="info">info</span>
+                        Test Instructions
+                    </h2>
+<div class="space-y-4">
+<div class="flex gap-4 items-start p-4 bg-slate-50 dark:bg-slate-800/30 rounded-lg">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs">1</span>
+<p class="text-slate-700 dark:text-slate-300">Ensure you have a stable internet connection. Switching tabs or minimizing the browser may lead to test termination.</p>
+</div>
+<div class="flex gap-4 items-start p-4 bg-slate-50 dark:bg-slate-800/30 rounded-lg">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs">2</span>
+<p class="text-slate-700 dark:text-slate-300">Answer all questions before the timer runs out. You can navigate between questions using the question pallet.</p>
+</div>
+<div class="flex gap-4 items-start p-4 bg-slate-50 dark:bg-slate-800/30 rounded-lg">
+<span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs">3</span>
+<p class="text-slate-700 dark:text-slate-300">Auto-submit on timeout: The test will be automatically submitted once the 20-minute timer expires.</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-8">
+<button class="w-full md:w-auto px-8 py-3 text-slate-600 dark:text-slate-400 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-all flex items-center justify-center gap-2" id="back-tests-btn" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                        Back to Tests
+                    </button>
+<button class="w-full md:w-auto px-12 py-4 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold rounded-lg shadow-lg shadow-blue-500/20 transition-all flex items-center justify-center gap-3 text-lg" id="start-test-btn" type="button">
+                        Start Test
+                        <span class="material-symbols-outlined filled" data-icon="play_arrow">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- System Requirements Footer -->
+<div class="mt-8 flex items-center gap-6 text-slate-400 text-xs">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="monitor">monitor</span>
+                Desktop Recommended
+            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="videocam_off">videocam_off</span>
+                No Webcam Required
+            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+                Secure Environment
+            </div>
+</div>
+</main>
+<!-- SideNavBar (Hidden on this specific transactional screen per UX guidelines) -->
+<!-- The side nav is suppressed to focus the user on the "Start Test" action -->
+<!-- Mobile Bottom Navigation (Only visible on small screens) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-medium uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-blue-600" href="mock-test-instructions.html">
+<span class="material-symbols-outlined filled" data-icon="quiz">quiz</span>
+<span class="text-[10px] font-medium uppercase">Tests</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="questions.html">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-[10px] font-medium uppercase">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium uppercase">Profile</span>
+</a>
+</div>
+<script src="../../js/api.js"></script>
+<script>
+    document.getElementById("back-tests-btn")?.addEventListener("click", function () {
+        window.location.href = "dashboard.html";
+    });
+    document.getElementById("start-test-btn")?.addEventListener("click", async function () {
+        try {
+            const tests = await window.HireReadyAPI.listMockTests();
+            if (Array.isArray(tests) && tests.length > 0) {
+                localStorage.setItem("hireready_mock_test_id", String(tests[0].id));
+            }
+        } catch (_error) {
+            // Fallback to active test page even if prefetch fails.
+        }
+        window.location.href = "mock-test-active.html";
+    });
+</script>
+</body></html>

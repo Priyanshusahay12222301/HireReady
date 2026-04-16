@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HireReady | Question Bank</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#4edea3",
+                        "inverse-on-surface": "#edf0ff",
+                        "on-tertiary-container": "#ffeedd",
+                        "secondary": "#006c49",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "background": "#f9f9ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-container": "#e9edff",
+                        "inverse-surface": "#293040",
+                        "on-surface": "#141b2b",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#dce2f7",
+                        "on-tertiary-fixed": "#2a1700",
+                        "error": "#ba1a1a",
+                        "tertiary": "#784b00",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-variant": "#dce2f7",
+                        "surface-tint": "#0053db",
+                        "on-primary-container": "#eeefff",
+                        "surface": "#f9f9ff",
+                        "primary-container": "#2563eb",
+                        "outline": "#737686",
+                        "on-surface-variant": "#434655",
+                        "surface-container-high": "#e1e8fd",
+                        "surface-bright": "#f9f9ff",
+                        "surface-dim": "#d3daef",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#141b2b",
+                        "on-primary-fixed": "#00174b",
+                        "primary": "#004ac6",
+                        "tertiary-container": "#996100",
+                        "on-secondary-container": "#00714d",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed-variant": "#005236"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Layout Wrapper: SideNavBar + Content -->
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-100 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 flex flex-col h-full p-4 space-y-2">
+<div class="px-4 py-6 mb-4">
+<div class="flex items-center gap-3">
+<img alt="HireReady Logo" class="w-10 h-10" data-alt="minimalist professional logo for a career tech platform featuring abstract geometric shapes in blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzaeu04XMw37OhBspU1D5sdI-69BzUzxWkrCc6R1VlxSsBgghwE_AzGR0VXzI7dNzrHRlP1VOHYVecaF7dinlT4JcuSjp5VDHo2Azh5s5zmIasgPkR2rXfXHUQU9tiNmKomY0sO3NJWN5QHLm0V2ZGpzDofKoNyi12YnLt1oHsGqrq_ctEX2tchUBTuo_rYJUlQYB7LZ6-OX40XS5bKJ8K5A48oKa2J55drmYGgo9eozWM_TqCpIVOT8ktEbg13xYnMRqEdGPWHTw"/>
+<div>
+<h1 class="text-2xl font-black text-blue-700 dark:text-blue-400">HireReady</h1>
+<p class="text-xs font-medium text-slate-500">Career Concierge</p>
+</div>
+</div>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-white/50 transition-all group" href="dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-400 rounded-lg px-4 py-3 shadow-sm transition-all group" href="questions.html">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-medium text-sm">Question Bank</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-white/50 transition-all group" href="mock-test-instructions.html">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="font-medium text-sm">Mock Tests</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-white/50 transition-all group" href="jobs.html">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="font-medium text-sm">Job Board</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-white/50 transition-all group" href="my-applications.html">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-medium text-sm">My Applications</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-white/50 transition-all group" href="profile.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-medium text-sm">Profile</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800 mt-auto">
+<a class="w-full flex items-center gap-3 text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-white/50 transition-all group mt-2" href="../login.html">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium text-sm">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-8 lg:p-12">
+<!-- Page Header -->
+<header class="mb-10">
+<h2 class="text-[32px] font-bold text-on-surface tracking-tight mb-2">Question Bank</h2>
+<p class="text-on-surface-variant max-w-2xl leading-relaxed">Prepare with precision. Thousands of curated technical and behavioral questions from top companies across the globe.</p>
+</header>
+<!-- Sticky Filter Bar -->
+<section class="bg-surface-container-low rounded-xl p-6 mb-8 flex flex-wrap items-center gap-4">
+<!-- Search Input -->
+<div class="relative flex-grow min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border-none rounded-lg pl-10 pr-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 transition-all" id="question-search" placeholder="Search keywords, topics..." type="text"/>
+</div>
+<!-- Company Dropdown -->
+<div class="relative w-full md:w-auto">
+<select aria-label="Filter by company" class="appearance-none w-full md:w-48 bg-surface-container-lowest border-none rounded-lg px-4 py-3 text-sm pr-10 focus:ring-2 focus:ring-primary/20 cursor-pointer" id="company-filter" title="Filter by company">
+<option>Company</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Category Dropdown -->
+<div class="relative w-full md:w-auto">
+<select aria-label="Filter by category" class="appearance-none w-full md:w-48 bg-surface-container-lowest border-none rounded-lg px-4 py-3 text-sm pr-10 focus:ring-2 focus:ring-primary/20 cursor-pointer" id="category-filter" title="Filter by category">
+<option>Category</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold text-sm hover:opacity-90 transition-all flex items-center gap-2" id="apply-filters-btn" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                    Apply Filters
+                </button>
+</section>
+<!-- Horizontal Company Tabs -->
+<div class="flex items-center gap-3 overflow-x-auto hide-scrollbar pb-6 mb-4" id="company-tabs">
+</div>
+<!-- Question Cards List -->
+<div class="space-y-6" id="question-list"></div>
+<div class="mt-12 text-center text-sm text-slate-500" id="question-list-status">Loading questions...</div>
+<!-- Pagination Placeholder -->
+<div class="mt-8 flex items-center justify-center gap-3" id="pagination-shell">
+<button class="px-4 py-2 rounded-lg border border-slate-200 text-slate-600" id="prev-page-btn" type="button">Previous</button>
+<span class="text-sm text-slate-500" id="page-indicator">Page 1</span>
+<button class="px-4 py-2 rounded-lg border border-slate-200 text-slate-600" id="next-page-btn" type="button">Next</button>
+</div>
+<!-- Footer Section -->
+<footer class="mt-20 py-12 px-8 border-t border-slate-200 dark:border-slate-800 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-4">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100">HireReady</div>
+<p class="text-xs font-medium uppercase tracking-widest text-slate-500">© 2026 HireReady. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-slate-800 transition-all" href="../../index.html">Privacy Policy</a>
+<a class="text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-slate-800 transition-all" href="../../index.html">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-slate-800 transition-all" href="../../index.html">Contact Us</a>
+<a class="text-xs font-medium uppercase tracking-widest text-slate-500 hover:text-slate-800 transition-all" href="../../index.html">Support</a>
+</div>
+</footer>
+</main>
+</div>
+<script src="../../js/api.js"></script>
+<script>
+    const searchInput = document.getElementById("question-search");
+    const companyFilter = document.getElementById("company-filter");
+    const categoryFilter = document.getElementById("category-filter");
+    const applyFiltersBtn = document.getElementById("apply-filters-btn");
+    const companyTabs = document.getElementById("company-tabs");
+    const questionList = document.getElementById("question-list");
+    const questionListStatus = document.getElementById("question-list-status");
+    const prevPageBtn = document.getElementById("prev-page-btn");
+    const nextPageBtn = document.getElementById("next-page-btn");
+    const pageIndicator = document.getElementById("page-indicator");
+
+    const PAGE_SIZE = 5;
+    let allQuestions = [];
+    let filteredQuestions = [];
+    let activeCompanyTab = "";
+    let currentPage = 1;
+
+    function normalizeText(value) {
+        return String(value || "").trim().toLowerCase();
+    }
+
+    function escapeHtml(value) {
+        return String(value || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    function getOptionLetters(question) {
+        return ["A", "B", "C", "D"].filter((key) => question.options && question.options[key]);
+    }
+
+    function renderQuestionCard(question, index) {
+        const optionLetters = getOptionLetters(question);
+        const uniqueId = `question-${question.id}-${index}`;
+
+        return `
+            <article class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow" data-question-id="${question.id}">
+                <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-xs font-bold text-primary">
+                            ${escapeHtml(question.company || "GEN")}
+                        </div>
+                        <div>
+                            <span class="block text-sm font-bold text-on-surface">${escapeHtml(question.company || "General")}</span>
+                            <span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">${escapeHtml(question.category || "General")}</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">${escapeHtml(question.difficulty || "Medium")}</span>
+                        <span class="bg-surface-container-highest text-on-surface-variant text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">${escapeHtml(question.category || "General")}</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-semibold text-on-surface leading-tight mb-6">${escapeHtml(question.prompt)}</h3>
+                <div class="grid md:grid-cols-2 gap-3 mb-8" data-options-shell="${uniqueId}">
+                    ${optionLetters
+                        .map(
+                            (letter) => `
+                                <button class="text-left p-4 rounded-lg bg-surface-container-low text-sm font-medium text-on-surface-variant border-transparent border-2 hover:border-primary/20 transition-all cursor-pointer" data-answer-btn="${uniqueId}" data-option="${letter}" type="button">
+                                    <span class="text-primary mr-2 font-bold">${letter}.</span> ${escapeHtml(question.options[letter])}
+                                </button>
+                            `
+                        )
+                        .join("")}
+                </div>
+                <div class="rounded-lg px-4 py-3 text-sm hidden" data-answer-result="${uniqueId}"></div>
+                <div class="border-t border-outline-variant/20 pt-6 mt-4">
+                    <details class="group">
+                        <summary class="list-none cursor-pointer flex items-center justify-between text-primary font-bold text-sm tracking-tight">
+                            <span>SHOW ANSWER &amp; EXPLANATION</span>
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+                        </summary>
+                        <div class="mt-4 p-5 rounded-lg bg-secondary-container/10 border-l-4 border-secondary">
+                            <p class="text-sm text-on-surface leading-relaxed">
+                                <strong>Correct Answer: ${escapeHtml(question.correct_option || "N/A")}</strong><br/><br/>
+                                ${escapeHtml(question.explanation || "Explanation not available.")}
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </article>
+        `;
+    }
+
+    function bindAnswerEvents() {
+        questionList.querySelectorAll("[data-answer-btn]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const uniqueId = button.getAttribute("data-answer-btn");
+                const selected = button.getAttribute("data-option");
+                const card = button.closest("article");
+                const questionId = Number(card.getAttribute("data-question-id"));
+                const question = filteredQuestions.find((item) => item.id === questionId);
+                if (!question) {
+                    return;
+                }
+
+                const optionButtons = card.querySelectorAll(`[data-answer-btn=\"${uniqueId}\"]`);
+                optionButtons.forEach((item) => {
+                    item.classList.remove("border-green-500", "bg-green-50", "border-red-500", "bg-red-50", "border-primary/20");
+                    item.classList.add("border-transparent");
+                });
+
+                const correctOption = question.correct_option;
+                const resultEl = card.querySelector(`[data-answer-result=\"${uniqueId}\"]`);
+                const isCorrect = selected === correctOption;
+
+                if (isCorrect) {
+                    button.classList.remove("border-transparent");
+                    button.classList.add("border-green-500", "bg-green-50");
+                    resultEl.className = "rounded-lg px-4 py-3 text-sm bg-green-50 text-green-700 border border-green-200";
+                    resultEl.textContent = `Correct! ${selected} is the right answer.`;
+                } else {
+                    button.classList.remove("border-transparent");
+                    button.classList.add("border-red-500", "bg-red-50");
+
+                    const correctBtn = card.querySelector(`[data-answer-btn=\"${uniqueId}\"][data-option=\"${correctOption}\"]`);
+                    if (correctBtn) {
+                        correctBtn.classList.remove("border-transparent");
+                        correctBtn.classList.add("border-green-500", "bg-green-50");
+                    }
+
+                    resultEl.className = "rounded-lg px-4 py-3 text-sm bg-red-50 text-red-700 border border-red-200";
+                    resultEl.textContent = `Incorrect. You chose ${selected}. Correct answer is ${correctOption}.`;
+                }
+            });
+        });
+    }
+
+    function renderQuestionPage() {
+        const totalPages = Math.max(Math.ceil(filteredQuestions.length / PAGE_SIZE), 1);
+        currentPage = Math.min(currentPage, totalPages);
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const pageItems = filteredQuestions.slice(start, start + PAGE_SIZE);
+
+        if (!pageItems.length) {
+            questionList.innerHTML = "";
+            questionListStatus.textContent = "No questions match your filters.";
+            pageIndicator.textContent = "Page 1";
+            prevPageBtn.disabled = true;
+            nextPageBtn.disabled = true;
+            return;
+        }
+
+        questionList.innerHTML = pageItems.map((question, index) => renderQuestionCard(question, index)).join("");
+        bindAnswerEvents();
+
+        questionListStatus.textContent = `Showing ${start + 1}-${Math.min(start + PAGE_SIZE, filteredQuestions.length)} of ${filteredQuestions.length} questions`;
+        pageIndicator.textContent = `Page ${currentPage} of ${totalPages}`;
+        prevPageBtn.disabled = currentPage === 1;
+        nextPageBtn.disabled = currentPage === totalPages;
+    }
+
+    function applyClientFilters() {
+        const keyword = normalizeText(searchInput.value);
+        const selectedCompanyRaw = activeCompanyTab || (companyFilter.value === "Company" ? "" : companyFilter.value);
+        const selectedCompany = normalizeText(selectedCompanyRaw);
+        const selectedCategory = normalizeText(categoryFilter.value === "Category" ? "" : categoryFilter.value);
+
+        filteredQuestions = allQuestions.filter((question) => {
+            const company = normalizeText(question.company);
+            const category = normalizeText(question.category);
+            const difficulty = normalizeText(question.difficulty);
+            const prompt = normalizeText(question.prompt);
+            const explanation = normalizeText(question.explanation);
+            const options = Object.values(question.options || {}).map(normalizeText).join(" ");
+
+            const matchesKeyword = !keyword || [prompt, explanation, options, company, category, difficulty].join(" ").includes(keyword);
+            const matchesCompany = !selectedCompany || company === selectedCompany;
+            const matchesCategory = !selectedCategory || category === selectedCategory;
+
+            return matchesKeyword && matchesCompany && matchesCategory;
+        });
+
+        currentPage = 1;
+        renderQuestionPage();
+    }
+
+    function renderCompanyTabs(companies) {
+        const sorted = [...companies].sort((a, b) => a.localeCompare(b));
+        const tabs = ["All Companies", ...sorted];
+        companyTabs.innerHTML = tabs
+            .map((label) => {
+                const isActive = (label === "All Companies" && !activeCompanyTab) || normalizeText(label) === normalizeText(activeCompanyTab);
+                return `
+                    <button class="whitespace-nowrap px-6 py-2 rounded-full text-sm font-semibold transition-colors ${isActive ? "bg-primary text-on-primary" : "bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest"}" data-company-tab="${escapeHtml(label)}" type="button">
+                        ${escapeHtml(label)}
+                    </button>
+                `;
+            })
+            .join("");
+
+        companyTabs.querySelectorAll("[data-company-tab]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const value = button.getAttribute("data-company-tab") || "";
+                activeCompanyTab = value === "All Companies" ? "" : value;
+                companyFilter.value = activeCompanyTab || "Company";
+                renderCompanyTabs(companies);
+                applyClientFilters();
+            });
+        });
+    }
+
+    function fillFilterDropdowns(questions) {
+        const previousCompany = activeCompanyTab || (companyFilter.value !== "Company" ? companyFilter.value : "");
+        const previousCategory = categoryFilter.value !== "Category" ? categoryFilter.value : "";
+
+        const companies = [...new Set(questions.map((question) => question.company).filter(Boolean))];
+        const categories = [...new Set(questions.map((question) => question.category).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+
+        companyFilter.innerHTML = `<option>Company</option>${companies
+            .sort((a, b) => a.localeCompare(b))
+            .map((company) => `<option>${escapeHtml(company)}</option>`)
+            .join("")}`;
+
+        categoryFilter.innerHTML = `<option>Category</option>${categories.map((category) => `<option>${escapeHtml(category)}</option>`).join("")}`;
+
+        if (previousCompany && companies.includes(previousCompany)) {
+            companyFilter.value = previousCompany;
+            activeCompanyTab = previousCompany;
+        } else {
+            companyFilter.value = "Company";
+            activeCompanyTab = "";
+        }
+
+        if (previousCategory && categories.includes(previousCategory)) {
+            categoryFilter.value = previousCategory;
+        } else {
+            categoryFilter.value = "Category";
+        }
+
+        renderCompanyTabs(companies);
+    }
+
+    async function fetchQuestionsFromAPI() {
+        questionListStatus.textContent = "Loading questions...";
+
+        const params = new URLSearchParams();
+        params.set("include_answer", "true");
+
+        const company = activeCompanyTab || (companyFilter.value !== "Company" ? companyFilter.value : "");
+        const category = categoryFilter.value !== "Category" ? categoryFilter.value : "";
+
+        if (company) {
+            params.set("company", company);
+        }
+        if (category) {
+            params.set("category", category);
+        }
+
+        const query = params.toString() ? `?${params.toString()}` : "";
+
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/questions${query}`);
+            if (!response.ok) {
+                throw new Error("Failed to fetch questions");
+            }
+            allQuestions = await response.json();
+
+            fillFilterDropdowns(allQuestions);
+            applyClientFilters();
+        } catch (error) {
+            questionList.innerHTML = "";
+            questionListStatus.textContent = error.message || "Unable to load questions right now.";
+        }
+    }
+
+    let searchDebounce = null;
+    searchInput.addEventListener("input", () => {
+        clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(() => {
+            applyClientFilters();
+        }, 250);
+    });
+
+    companyFilter.addEventListener("change", () => {
+        activeCompanyTab = companyFilter.value === "Company" ? "" : companyFilter.value;
+        fetchQuestionsFromAPI();
+    });
+
+    categoryFilter.addEventListener("change", () => {
+        fetchQuestionsFromAPI();
+    });
+
+    applyFiltersBtn.addEventListener("click", () => {
+        fetchQuestionsFromAPI();
+    });
+
+    prevPageBtn.addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage -= 1;
+            renderQuestionPage();
+        }
+    });
+
+    nextPageBtn.addEventListener("click", () => {
+        const totalPages = Math.max(Math.ceil(filteredQuestions.length / PAGE_SIZE), 1);
+        if (currentPage < totalPages) {
+            currentPage += 1;
+            renderQuestionPage();
+        }
+    });
+
+    fetchQuestionsFromAPI();
+</script>
+</body></html>
